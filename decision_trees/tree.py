@@ -18,17 +18,5 @@ def make_tree(data,target,features):
 
     return tree
 
-def get_edges(treedict, parent=None):
-    edges=[]
-    name = next(iter(treedict.keys()))
-    if parent is not None:
-        edges.append((parent, name))
-    for item in treedict[name]:
-        if isinstance(item, dict):
-            get_edges(item, parent=name)
-        else:
-            edges.append((name, item))
-    return edges
-
 def print_tree(tree):
     print( json.dumps(tree,indent=2))
