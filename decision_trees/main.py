@@ -9,7 +9,8 @@ def main():
     data = pd.read_csv('res/titanic-homework.csv')
     target = 'Survived'
     features = ['Pclass', 'Sex', 'SibSp', 'Parch']
-    print_tree(make_tree(data,target,features))
+    linear_featers=['Age']
+    print_tree(make_tree(data,target,features,linear_featers))
     
 
 if __name__ == "__main__":
