@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from .tree import make_tree
+from .tree import make_tree, print_tree
 import pandas as pd
 
 
@@ -9,7 +9,7 @@ def main():
     data = pd.read_csv('res/titanic-homework.csv')
     target = 'Survived'
     features = ['Pclass', 'Sex', 'SibSp', 'Parch']
-    print(make_tree(data,target,features))
+    print_tree(make_tree(data,target,features))
 
 if __name__ == "__main__":
     main()
