@@ -10,6 +10,7 @@ def main():
     target = 'Survived'
     features = ['Pclass', 'Sex', 'SibSp', 'Parch']
     print_tree(make_tree(data,target,features))
+    
 
 if __name__ == "__main__":
     main()
