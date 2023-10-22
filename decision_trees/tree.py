@@ -3,22 +3,26 @@ import pandas as pd
 import random
 import json
 import graphviz
-    
+
 edges=[]
 dot = graphviz.Digraph()
 
-def make_tree(data,target,features,linear_featers=[],idx='0',last_best_feature='-1',value='0'):
 
-    # print(last_best_feature_value)
-    # print(set(data[target]))
-    # print(len(set(data[target])))
+def make_tree(
+    data: pd.Series,
+    target: str,
+    features: list[str],
+    linear_featers: list[str] = [],
+    idx: str = '0',
+    last_best_feature_value: str = '-1',
+    value: str = '0'
+) -> dict:
     if len(features) == 0 or len(set(data[target])) == 1:
         d=data[target].value_counts().nlargest(1).index[0]
         dot.node(last_best_feature + str(d), str(d))
         dot.edge(last_best_feature, last_best_feature +str(d),label=value)
         return d
-        
-        
+
     best_feature = max(features, key=lambda f: gain_ratio(data, f, target))
     # connections betweens subtrees
     if last_best_feature != '-1':
@@ -38,7 +42,6 @@ def make_tree(data,target,features,linear_featers=[],idx='0',last_best_feature='
     # else make divisions
 
     return tree
-    
 
 def map_age_to_labels(age):
     if 0 <= age <= 20:
@@ -50,8 +53,7 @@ def map_age_to_labels(age):
     else:
         return "unknown"
 
-def print_tree(tree):
-    # print( json.dumps(tree)
+def print_tree(tree: dict):
     print(tree.keys())
     print(tree.items())
     print(tree)
@@ -61,7 +63,3 @@ def print_tree(tree):
     dot
     print(edges)
     print(len(edges)+1)
-
-    
-    
-    
