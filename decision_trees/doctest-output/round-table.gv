@@ -1,150 +1,75 @@
 digraph {
-	male_00 [label=male]
-	Sex0 -> male_00
+	Sex0 [label=Sex]
 	Pclass00 [label=Pclass]
-	male_00 -> Pclass00
-	"3_000" [label=3]
-	Pclass00 -> "3_000"
+	Sex0 -> Pclass00 [label=male]
 	Parch000 [label=Parch]
-	"3_000" -> Parch000
-	"0_0000" [label=0]
-	Parch000 -> "0_0000"
-	"0_00000" [label=0]
-	"0_0000" -> "0_00000"
-	"1_0001" [label=1]
-	Parch000 -> "1_0001"
-	SibSp0001 [label=SibSp]
-	"1_0001" -> SibSp0001
-	"3_00010" [label=3]
-	SibSp0001 -> "3_00010"
-	"3_000100" [label=0]
-	"3_00010" -> "3_000100"
-	"4_00011" [label=4]
-	SibSp0001 -> "4_00011"
-	"4_000110" [label=0]
-	"4_00011" -> "4_000110"
-	"1_00012" [label=1]
-	SibSp0001 -> "1_00012"
-	"1_000121" [label=1]
-	"1_00012" -> "1_000121"
-	"5_0002" [label=5]
-	Parch000 -> "5_0002"
-	"5_00020" [label=0]
-	"5_0002" -> "5_00020"
-	"2_0003" [label=2]
-	Parch000 -> "2_0003"
-	"2_00030" [label=0]
-	"2_0003" -> "2_00030"
-	"3_0004" [label=3]
-	Parch000 -> "3_0004"
-	"3_00040" [label=0]
-	"3_0004" -> "3_00040"
-	"1_001" [label=1]
-	Pclass00 -> "1_001"
-	SibSp001 [label=SibSp]
-	"1_001" -> SibSp001
-	"0_0010" [label=0]
-	SibSp001 -> "0_0010"
-	Parch0010 [label=Parch]
-	"0_0010" -> Parch0010
-	"0_00100" [label=0]
-	Parch0010 -> "0_00100"
-	"0_001000" [label=0]
-	"0_00100" -> "0_001000"
-	"1_00101" [label=1]
-	Parch0010 -> "1_00101"
-	"1_001010" [label=0]
-	"1_00101" -> "1_001010"
-	"3_0011" [label=3]
-	SibSp001 -> "3_0011"
-	"3_00110" [label=0]
-	"3_0011" -> "3_00110"
-	"1_0012" [label=1]
-	SibSp001 -> "1_0012"
-	"1_00120" [label=0]
-	"1_0012" -> "1_00120"
-	"2_002" [label=2]
-	Pclass00 -> "2_002"
-	Parch002 [label=Parch]
-	"2_002" -> Parch002
-	"0_0020" [label=0]
-	Parch002 -> "0_0020"
-	SibSp0020 [label=SibSp]
-	"0_0020" -> SibSp0020
-	"0_00200" [label=0]
-	SibSp0020 -> "0_00200"
-	"0_002000" [label=0]
-	"0_00200" -> "0_002000"
-	"1_00201" [label=1]
-	SibSp0020 -> "1_00201"
-	"1_002010" [label=0]
-	"1_00201" -> "1_002010"
-	"2_0021" [label=2]
-	Parch002 -> "2_0021"
-	"2_00211" [label=1]
-	"2_0021" -> "2_00211"
-	female_01 [label=female]
-	Sex0 -> female_01
+	Pclass00 -> Parch000 [label=3]
+	Parch0000 [label=0]
+	Parch000 -> Parch0000 [label=0]
+	Age0001 [label=Age]
+	Parch000 -> Age0001 [label=1]
+	Age00010 [label=0]
+	Age0001 -> Age00010 [label=young]
+	Age00011 [label=1]
+	Age0001 -> Age00011 [label=middle]
+	Parch0000 [label=0]
+	Parch000 -> Parch0000 [label=5]
+	Parch0000 [label=0]
+	Parch000 -> Parch0000 [label=2]
+	Parch0000 [label=0]
+	Parch000 -> Parch0000 [label=3]
+	Age001 [label=Age]
+	Pclass00 -> Age001 [label=1]
+	Age0010 [label=0]
+	Age001 -> Age0010 [label=old]
+	SibSp0011 [label=SibSp]
+	Age001 -> SibSp0011 [label=middle]
+	SibSp00111 [label=1]
+	SibSp0011 -> SibSp00111 [label=0]
+	SibSp00110 [label=0]
+	SibSp0011 -> SibSp00110 [label=1]
+	SibSp0012 [label=SibSp]
+	Age001 -> SibSp0012 [label=young]
+	SibSp00120 [label=0]
+	SibSp0012 -> SibSp00120 [label=3]
+	SibSp00121 [label=1]
+	SibSp0012 -> SibSp00121 [label=0]
+	Age002 [label=Age]
+	Pclass00 -> Age002 [label=2]
+	Age0021 [label=1]
+	Age002 -> Age0021 [label=young]
+	Age0020 [label=0]
+	Age002 -> Age0020 [label=middle]
+	Age0020 [label=0]
+	Age002 -> Age0020 [label=old]
 	SibSp01 [label=SibSp]
-	female_01 -> SibSp01
-	"1_010" [label=1]
-	SibSp01 -> "1_010"
+	Sex0 -> SibSp01 [label=female]
 	Pclass010 [label=Pclass]
-	"1_010" -> Pclass010
-	"1_0100" [label=1]
-	Pclass010 -> "1_0100"
-	"1_01001" [label=1]
-	"1_0100" -> "1_01001"
-	"2_0101" [label=2]
-	Pclass010 -> "2_0101"
-	"2_01011" [label=1]
-	"2_0101" -> "2_01011"
-	"3_0102" [label=3]
-	Pclass010 -> "3_0102"
+	SibSp01 -> Pclass010 [label=1]
+	Pclass0101 [label=1]
+	Pclass010 -> Pclass0101 [label=1]
+	Pclass0101 [label=1]
+	Pclass010 -> Pclass0101 [label=2]
 	Parch0102 [label=Parch]
-	"3_0102" -> Parch0102
-	"1_01020" [label=1]
-	Parch0102 -> "1_01020"
-	"1_010201" [label=1]
-	"1_01020" -> "1_010201"
-	"0_01021" [label=0]
-	Parch0102 -> "0_01021"
-	"0_010210" [label=0]
-	"0_01021" -> "0_010210"
-	"5_01022" [label=5]
-	Parch0102 -> "5_01022"
-	"5_010221" [label=1]
-	"5_01022" -> "5_010221"
-	"0_011" [label=0]
-	SibSp01 -> "0_011"
-	"0_0111" [label=1]
-	"0_011" -> "0_0111"
-	"3_012" [label=3]
-	SibSp01 -> "3_012"
-	Parch012 [label=Parch]
-	"3_012" -> Parch012
-	"1_0120" [label=1]
-	Parch012 -> "1_0120"
-	"1_01200" [label=0]
-	"1_0120" -> "1_01200"
-	"0_0121" [label=0]
-	Parch012 -> "0_0121"
-	"0_01211" [label=1]
-	"0_0121" -> "0_01211"
-	"2_0122" [label=2]
-	Parch012 -> "2_0122"
-	"2_01221" [label=1]
-	"2_0122" -> "2_01221"
-	"2_013" [label=2]
-	SibSp01 -> "2_013"
-	"2_0130" [label=0]
-	"2_013" -> "2_0130"
-	"4_014" [label=4]
-	SibSp01 -> "4_014"
-	"4_0141" [label=1]
-	"4_014" -> "4_0141"
-	"5_015" [label=5]
-	SibSp01 -> "5_015"
-	"5_0150" [label=0]
-	"5_015" -> "5_0150"
+	Pclass010 -> Parch0102 [label=3]
+	Parch01021 [label=1]
+	Parch0102 -> Parch01021 [label=1]
+	Parch01020 [label=0]
+	Parch0102 -> Parch01020 [label=0]
+	Parch01021 [label=1]
+	Parch0102 -> Parch01021 [label=5]
+	SibSp011 [label=1]
+	SibSp01 -> SibSp011 [label=0]
+	Age012 [label=Age]
+	SibSp01 -> Age012 [label=3]
+	Age0120 [label=0]
+	Age012 -> Age0120 [label=young]
+	Age0121 [label=1]
+	Age012 -> Age0121 [label=middle]
+	SibSp010 [label=0]
+	SibSp01 -> SibSp010 [label=2]
+	SibSp011 [label=1]
+	SibSp01 -> SibSp011 [label=4]
+	SibSp010 [label=0]
+	SibSp01 -> SibSp010 [label=5]
 }
