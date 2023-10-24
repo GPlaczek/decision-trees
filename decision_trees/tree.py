@@ -17,16 +17,17 @@ def make_tree(
     last_best_feature: str = '-1',
     value: str = '0'
 ) -> dict:
+    c=len(data[target])
     if len(features) == 0 or len(data[target].unique()) == 1:
         d=data[target].value_counts().nlargest(1).index[0]
-        c=len(data[target])
+        
         if d:
             d="Survived"
         else:
-            d="not Survived"
+            d="NOT Survived"
 
-        dot.node(f'{last_best_feature}{d}', str(c)+":"+str(d))
-        dot.edge(last_best_feature, f'{last_best_feature}{d}', label=value)
+        dot.node(f'{last_best_feature}{d}', str(d))
+        dot.edge(last_best_feature, f'{last_best_feature}{d}', label=f'{value}({c})')
 
         return d
 
@@ -35,7 +36,7 @@ def make_tree(
     # connections betweens subtrees
     if last_best_feature != '-1':
         dot.node(f'{best_feature}{idx}', best_feature)
-        dot.edge(last_best_feature, f'{best_feature}{idx}', label=value)
+        dot.edge(last_best_feature, f'{best_feature}{idx}', label=f'{value}({c})')
     else:
         dot.node(f'{best_feature}{idx}',best_feature)
 
