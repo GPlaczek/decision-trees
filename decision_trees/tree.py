@@ -8,6 +8,7 @@ import graphviz
 
 edges=[]
 dot = graphviz.Digraph()
+i = 0
 
 
 def make_tree(
@@ -19,6 +20,7 @@ def make_tree(
     last_best_feature: str = '-1',
     value: str = '0'
 ) -> dict:
+    global i
     if len(features) == 0 or len(data[target].unique()) == 1:
         d=data[target].value_counts().nlargest(1).index[0]
 
@@ -47,7 +49,8 @@ def make_tree(
             tree[best_feature][str(value)] = make_tree(subset, target, features, linear_featers, f'{idx}{idxs}', f'{best_feature}{idx}', str(value))
 
     # else make divisions
-
+    dot.render(f'doctest-output/round-table-{i}.gv')
+    i+=1
     return tree
 
 def map_age_to_labels(age):
@@ -66,7 +69,5 @@ def print_tree(tree: dict):
     print(tree)
 
 
-    dot.render('doctest-output/round-table.gv')
-    dot
     print(edges)
     print(len(edges)+1)
