@@ -9,12 +9,10 @@ import graphviz
 edges=[]
 dot = graphviz.Digraph()
 
-
 def make_tree(
     data: pd.Series,
     target: str,
     features: list[str],
-    linear_featers: list[str] = [],
     idx: str = '0',
     last_best_feature: str = '-1',
     value: str = '0'
@@ -39,15 +37,10 @@ def make_tree(
     tree = { best_feature: {} }
     features = [f for f in features if f != best_feature]
 
-    idm = len(data[best_feature].unique())
-
-    if best_feature not in linear_featers:
-        for idxs, value in enumerate(data[best_feature].unique()):
-            subset = data[data[best_feature] == value]
-            tree[best_feature][str(value)] = make_tree(subset, target, features, linear_featers, f'{idx}{idxs}', f'{best_feature}{idx}', str(value))
-
-    # else make divisions
-
+    for idxs, value in enumerate(data[best_feature].unique()):
+        subset = data[data[best_feature] == value]
+        tree[best_feature][str(value)] = make_tree(subset, target, features, f'{idx}{idxs}', f'{best_feature}{idx}', str(value))
+    
     return tree
 
 def map_age_to_labels(age):
@@ -66,7 +59,5 @@ def print_tree(tree: dict):
     print(tree)
 
 
-    dot.render('doctest-output/round-table.gv')
-    dot
     print(edges)
     print(len(edges)+1)
