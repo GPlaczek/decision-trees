@@ -19,8 +19,13 @@ def make_tree(
 ) -> dict:
     if len(features) == 0 or len(data[target].unique()) == 1:
         d=data[target].value_counts().nlargest(1).index[0]
+        c=len(data[target])
+        if d:
+            d="Survived"
+        else:
+            d="not Survived"
 
-        dot.node(f'{last_best_feature}{d}', str(d))
+        dot.node(f'{last_best_feature}{d}', str(c)+":"+str(d))
         dot.edge(last_best_feature, f'{last_best_feature}{d}', label=value)
 
         return d
@@ -57,7 +62,7 @@ def print_tree(tree: dict):
     print(tree.keys())
     print(tree.items())
     print(tree)
-
+    dot.render("doctest-output/out")
 
     print(edges)
     print(len(edges)+1)
